@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> 番茄影片辨識首頁 </h1>
+    {% csrf_token %}
+     請選擇果園名字: 
+        <form action="" method="get">
+          <!-- <input type="text" id='id_acc' name="id_acc"> -->
+          <select name="id_acc" id="id_acc">
+            <option value="david">david</option>
+            <option value="henry">henry</option>
+            <option value="Allen">Allen</option>
+            <option value="hahahaha">hahahaha</option>
+          </select>
+            <input type="submit" value='查看果園紀錄' formaction="/history">
+            or
+            <input type="submit" value='番茄影片辨識' formaction="/uploadPage">
+        </form>
+  </body>
+</html>

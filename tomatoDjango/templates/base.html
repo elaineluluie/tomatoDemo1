@@ -1,0 +1,16 @@
+
+<!-- <h2>Counting <del>Stars</del> Tomatos</h2> <h5>Said, "No more counting dollars, we'll be counting stars"</h5>-->
+<h2>{{id_acc}} 果園的番茄影片辨識</h2>
+<h4>請上傳影片檔(.mp4)</h4>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <input type="file" name="document">
+    <input type="submit", value='上傳即開始辨識'>
+    <h1></h1>
+    <input type="submit", value='回首頁' formaction="/homeTomato">
+    
+   
+  </form>
+
+

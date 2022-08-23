@@ -1,0 +1,52 @@
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<style>
+    #flotcontainer {
+        width: 500px;
+        height: 400px;
+        }
+</style>
+<body>
+<h1>{{id_acc}} 的果園紀錄</h1>
+
+<form>
+<input type="submit", value='回首頁' formaction="/homeTomato">
+</form>
+{% for d in data %}
+<h4>
+   上傳日期: {{d.time}} | 紅色番茄有 {{d.red}}顆，橘色番茄有 {{d.orange}}顆，綠色番茄有 {{d.green}}顆。
+</h4>
+
+<img src="data:image/png;base64,{{ d.plot|safe }}" >
+<!--
+<div id="container" style="width: 50%;">
+    <canvas id="pie-chart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+    dataPie = [{{d.red}},{{d.orange}},{{d.green}}];
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: dataPie,
+          backgroundColor: [
+            '#FF6347', '#FF8033', '#8CE600'
+          ],
+          label: 'tomato'
+        }],
+        labels: ['red','orange','green']
+      },
+      options: {
+        responsive: true
+      }
+    };
+   
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+</script> -->
+{% endfor %}
+</body>
+
